@@ -32,12 +32,12 @@ fn main() {
     io::stdout().flush().unwrap();
     for line in io::stdin().lock().lines() {
         match line.unwrap().as_str() {
-           "coin" => state = next_state(state, COIN),
-           "push" => state = next_state(state, PUSH),
-           "quit" => return,
-           unknown => {
-               eprintln!("ERROR: Unknown event {}", unknown);
-           }
+            "coin" => state = next_state(state, COIN),
+            "push" => state = next_state(state, PUSH),
+            "quit" => return,
+            unknown => {
+                eprintln!("ERROR: Unknown event {}", unknown);
+            }
         }
         println!("State: {}", state_to_str(state));
         print!("> ");
